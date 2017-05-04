@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/map_layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#80000000" >
+
+        <com.skobbler.ngx.map.SKMapViewHolder
+            android:id="@+id/view_group_map"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <RelativeLayout
+            android:id="@+id/chess_board_background"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/sk_map_background" />
+
+        <com.skobbler.sdkdemo.view.CustomCalloutView
+            android:id="@+id/map_popup"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </com.skobbler.sdkdemo.view.CustomCalloutView>
+    </FrameLayout>
+
+    <include
+        android:id="@+id/options_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/sk_layout_menu"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/alt_routes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/sk_layout_alternative_routes"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/map_styles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/sk_layout_map_styles"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/bottom_button"
+        style="@style/button_style"
+        android:text="@string/calculate_route"
+        android:alpha="0.7"
+        android:visibility="gone" />
+
+
+
+
+
+    <Button
+        android:id="@+id/position_me_button"
+        style="@style/button_style"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:alpha="0.7"
+        android:text="@string/label_position_me" />
+
+    <Button
+        android:id="@+id/buttonCalculateRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate_route"
+        android:alpha="0.7"
+        android:textSize="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/buttonRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refresh"
+        android:alpha="0.7"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/options_menu"
+        android:layout_toEndOf="@+id/options_menu" />
+
+    <Button
+        android:id="@+id/bottom_button_auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonRefresh"
+        android:alpha="0.5"
+        android:onClick="onClick"
+        android:text="@string/calculate_route"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/heading_button"
+        style="@style/button_style"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:alpha="0.7"
+        android:text="@string/label_heading" />
+
+    <ToggleButton
+        android:id="@+id/buttonMarkRouteStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:textOff="S"
+        android:textOn="S"
+        android:alpha="0.7"
+        />
+    <ToggleButton
+        android:id="@+id/buttonMarkRouteFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/buttonMarkRouteStart"
+        android:textOff="F"
+        android:textOn="F"
+        android:alpha="0.7"
+        />
+
+    <Button
+        android:id="@+id/buttonSearchByAddressActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/searchByAddress"
+        android:alpha="0.7"
+        android:layout_toRightOf="@id/buttonMarkRouteFinish"/>
+
+    <Button
+        android:id="@+id/buttonZoomOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="-"
+        android:alpha="0.7"
+        />
+    <Button
+        android:id="@+id/buttonZoomIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/buttonZoomOut"
+        android:text="+"
+        android:alpha="0.7"
+        />
+
+</RelativeLayout>
